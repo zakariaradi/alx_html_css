@@ -1,0 +1,45 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base */
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Sections spacing */
+section {
+    padding: 40px 20px;
+}
+
+/* Simple utility */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Accessible hidden heading */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
