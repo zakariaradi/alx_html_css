@@ -1,45 +1,193 @@
-/* Reset */
+/* ============================
+   RESET
+============================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Base */
 body {
     font-family: "Source Sans Pro", sans-serif;
     line-height: 1.6;
     color: #333;
-    background: #fff;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Sections spacing */
-section {
-    padding: 40px 20px;
-}
-
-/* Simple utility */
-.section-title {
+/* ============================
+   HEADER (HERO BANNER)
+============================ */
+.header {
+    background-image: url("images/Object.png"); /* your banner image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    color: #ffffff;
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
 }
 
-/* Accessible hidden heading */
+/* Figma gradient overlay */
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(7, 22, 41, 0.35),
+        rgba(7, 22, 41, 0.65),
+        rgba(7, 22, 41, 1)
+    );
+    z-index: 0;
+}
+
+/* ============================
+   NAVBAR
+============================ */
+.navbar {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo left */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 40px;
+}
+
+/* Nav links right */
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ============================
+   HERO TEXT
+============================ */
+.hero {
+    position: relative;
+    z-index: 2;
+    padding-top: 140px;
+}
+
+/* Large title */
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* SMILES • GRIN • LAUGH */
+.hero .subtext {
+    font-size: 0.9rem;
+    letter-spacing: 0.45rem;
+    opacity: 0.9;
+    margin-bottom: 28px;
+}
+
+/* Purple button */
+.cta {
+    background: #c271ff;
+    border: none;
+    padding: 12px 30px;
+    color: white;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(194, 113, 255, 0.4);
+}
+
+.cta:hover {
+    opacity: 0.85;
+}
+
+/* ============================
+   ACCESSIBILITY CLASS
+============================ */
 .visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
-    clip: rect(0, 0, 0, 0);
     overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+
+/* ============================
+   LEARN FROM THE PROS SECTION
+============================ */
+.pros-section {
+    background: #071629; /* deep navy */
+    padding: 80px 20px 110px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+/* Title */
+.pros-section h2 {
+    font-size: 2rem;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+.pros-section h2 .accent {
+    color: #c271ff; /* purple */
+    font-weight: 700;
+}
+
+/* 4 portraits arranged in a row */
+.pros-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Each profile block */
+.pro-item {
+    max-width: 200px;
+    text-align: center;
+}
+
+/* Circular face images */
+.pro-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 6px solid rgba(255,255,255,0.1);
+}
+
+/* Name */
+.pro-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Description lines */
+.pro-item p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.3;
 }
