@@ -467,3 +467,39 @@ body {
     font-size: 0.95rem;
     line-height: 1.5;
 }
+
+/* ============================
+   FOOTER
+============================ */
+footer {
+    background: #071629;
+    padding: 60px 20px;
+    color: #ffffff;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.footer-left img {
+    height: 35px;
+}
+
+/* social icons */
+.footer-right img {
+    width: 140px;
+    height: auto;
+}
+
+/* copyright */
+footer .copyright {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
