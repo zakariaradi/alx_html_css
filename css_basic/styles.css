@@ -1,0 +1,32 @@
+/* Make body a flex container in column layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ensures full height */
+}
+
+/* Make main a flex container in row layout */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto; /* automatic width/height so header + footer stay in place */
+}
+
+/* Article takes 2/3 width */
+article {
+    flex: 2;
+    overflow-y: auto; /* scroll if content exceeds height */
+    padding: 20px;
+}
+
+/* Aside takes 1/3 width */
+aside {
+    flex: 1;
+    overflow-y: auto; /* scroll if content exceeds height */
+    padding: 20px;
+}
+
+/* Optional (makes header and footer look nicer) */
+header, footer {
+    padding: 20px;
+}
