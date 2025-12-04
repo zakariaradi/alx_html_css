@@ -1,0 +1,155 @@
+/* GLOBAL RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+    --main-color: #FF6565;
+    --accent: #C271FF;
+    --bg-dark: #071629;
+    --max-width: 1000px;
+}
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+.header {
+    background-image: url("images/headphones_hero_1.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    position: relative;
+    color: #fff;
+}
+
+.header::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,0.6);
+}
+
+.header>* { position:relative; z-index:2; }
+
+/* NAVBAR */
+.nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 0;
+}
+
+.logo { width:140px; }
+
+/* NAV LINKS */
+.nav-links {
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a {
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.nav-links a:hover { color:var(--main-color); }
+
+/* HAMBURGER (hidden on desktop) */
+.hamburger {
+    display:none;
+    flex-direction:column;
+    gap:6px;
+    cursor:pointer;
+}
+
+.hamburger span {
+    width:28px;
+    height:3px;
+    background:#fff;
+    border-radius:3px;
+    transition:0.3s;
+}
+
+/* MOBILE NAV */
+@media (max-width:480px) {
+
+    .hamburger {
+        display:flex;
+    }
+
+    .nav-links {
+        position:absolute;
+        top:90px;
+        right:0;
+        width:100%;
+        background:rgba(0,0,0,0.9);
+        flex-direction:column;
+        padding:20px 0;
+        display:none;
+        animation:fadeIn 0.4s ease forwards;
+    }
+
+    .nav-links.show {
+        display:flex;
+    }
+
+    @keyframes fadeIn {
+        from {opacity:0;}
+        to {opacity:1;}
+    }
+}
+
+/* WHAT WE DO + ANIMATIONS (from previous task) */
+.service-item {
+    width:200px;
+    text-align:center;
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
+}
+.service-item:hover {
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* RESULTS (pentagon animation) */
+.pentagon {
+    width:150px;
+    height:140px;
+    background:linear-gradient(180deg, #ff8fb3 0%, #ff6565 100%);
+    clip-path: polygon(50% 0%, 92% 35%, 75% 95%, 25% 95%, 8% 35%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:transform 0.35s ease;
+    animation:float 4s ease-in-out infinite;
+}
+@keyframes float {
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+    100%{transform:translateY(0);}
+}
+.result-item:hover .pentagon {
+    transform:scale(1.08);
+}
+
+/* X animation */
+.hamburger.active span:nth-child(1) {
+    transform:translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform:translateY(-9px) rotate(-45deg);
+}
