@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Headphones — Our results (CSS pentagons)</title>
+
+  <!-- icon font if needed -->
+  <link rel="stylesheet" href="holberton_school-icon/style.css">
+
+  <link rel="stylesheet" href="6-styles.css" />
+</head>
+<body>
+
+  <!-- HEADER (kept from previous tasks) -->
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <img src="images/logo_headphones.png" alt="Headphones logo" class="logo">
+      <input id="menu-toggle" type="checkbox">
+      <label for="menu-toggle" class="menu-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a role="menuitem" href="#">what we do</a></li>
+        <li role="none"><a role="menuitem" href="#results">our results</a></li>
+        <li role="none"><a role="menuitem" href="#contact">contact us</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero container" role="banner" aria-label="Hero">
+      <h1>We craft beautiful audio experiences</h1>
+      <p class="subtitle">DESIGN • AUDIO • INNOVATION</p>
+      <a class="btn" href="#contact">Call to action</a>
+      <p class="hero-text">Simple, precise and crafted with care — our projects speak through results.</p>
+    </div>
+  </header>
+
+  <!-- WHAT WE DO (kept simple) -->
+  <main>
+    <section class="what-we-do container" id="what">
+      <h2>What we do...</h2>
+      <p class="section-desc">We design products, create sounds and build delightful experiences.</p>
+
+      <div class="services" role="list">
+        <article class="service-item" role="listitem">
+          <span class="holberton_school-icon-ic_sound service-icon" aria-hidden="true"></span>
+          <h3>Design</h3>
+          <p>Pixel-perfect product UI and visual systems.</p>
+        </article>
+
+        <article class="service-item" role="listitem">
+          <span class="holberton_school-icon-ic_video service-icon" aria-hidden="true"></span>
+          <h3>Production</h3>
+          <p>Professional audio and media production.</p>
+        </article>
+
+        <article class="service-item" role="listitem">
+          <span class="holberton_school-icon-ic_music service-icon" aria-hidden="true"></span>
+          <h3>Research</h3>
+          <p>User-research informed decisions and testing.</p>
+        </article>
+
+        <article class="service-item" role="listitem">
+          <span class="holberton_school-icon-ic_hearing service-icon" aria-hidden="true"></span>
+          <h3>Support</h3>
+          <p>Long term support and feature improvements.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- OUR RESULTS: CSS pentagons used instead of images -->
+    <section class="results" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <h2 id="results-title">Our results speak for themselves</h2>
+        <p class="results-desc">Measured improvements across multiple metrics after deployment.</p>
+
+        <div class="results-grid" role="list">
+          <div class="result-item" role="listitem">
+            <div class="pentagon" aria-hidden="true">
+              <span class="pentagon-number">+2%</span>
+            </div>
+            <p>Conversion uplift</p>
+          </div>
+
+          <div class="result-item" role="listitem">
+            <div class="pentagon" aria-hidden="true">
+              <span class="pentagon-number">+18%</span>
+            </div>
+            <p>User retention</p>
+          </div>
+
+          <div class="result-item" role="listitem">
+            <div class="pentagon" aria-hidden="true">
+              <span class="pentagon-number">+34%</span>
+            </div>
+            <p>Engagement</p>
+          </div>
+
+          <div class="result-item" role="listitem">
+            <div class="pentagon" aria-hidden="true">
+              <span class="pentagon-number">+8%</span>
+            </div>
+            <p>Referral rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (kept minimal) -->
+    <section class="contact container" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact us</h2>
+
+      <form class="contact-form" action="#" method="post" novalidate>
+        <label class="input-group">
+          <span class="visually-hidden">Name</span>
+          <input type="text" name="name" placeholder="Name" required>
+        </label>
+
+        <label class="input-group">
+          <span class="visually-hidden">Email</span>
+          <input type="email" name="email" placeholder="Email" required>
+        </label>
+
+        <label class="input-group">
+          <span class="visually-hidden">Message</span>
+          <textarea name="message" placeholder="Message" rows="4" required></textarea>
+        </label>
+
+        <button class="btn btn-submit" type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER (kept minimal) -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <img src="images/logo_headphones.png" alt="Headphones logo" class="logo-footer">
+      <p class="copyright">© Headphones 2020</p>
+    </div>
+  </footer>
+
+</body>
+</html>

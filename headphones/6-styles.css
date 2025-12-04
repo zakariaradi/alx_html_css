@@ -1,0 +1,154 @@
+/* ============================
+   RESET + VARIABLES
+   ============================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --max-width: 1000px;
+  --accent: #c271ff;
+  --muted: #6b7880;
+  --bg-dark: #071629;
+  --main: #FF6565;
+}
+
+/* basic page */
+html,body { height: 100%; }
+body{
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  color: #071629;
+  background: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* utility */
+.container{ width:90%; max-width:var(--max-width); margin:0 auto; padding:0 0; }
+.visually-hidden{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0; }
+
+/* ============================
+   HEADER / HERO
+   ============================ */
+.header{ background-image: url("images/headphones_hero_1.jpg"); background-size:cover; background-position:center; min-height:72vh; display:block; position:relative; color:#fff; }
+.header::before{ content:""; position:absolute; inset:0; background: linear-gradient(to bottom, rgba(7,22,41,0.25), rgba(7,22,41,0.7)); z-index:0; }
+.nav{ position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center; padding:28px 0; }
+.logo{ width:140px; display:block; }
+.menu-icon{ display:none; }
+.nav-links{ list-style:none; display:flex; gap:28px; }
+.nav-links a{ color:#fff; font-weight:600; text-decoration:none; }
+
+/* hero */
+.hero{ position:relative; z-index:2; text-align:center; padding:60px 0 80px; }
+.hero h1{ font-size: clamp(1.8rem,4.8vw,3.6rem); font-weight:800; margin-bottom:12px; color:#fff; }
+.subtitle{ letter-spacing:0.45rem; margin-bottom:22px; color: rgba(255,255,255,0.9); }
+.hero .btn{ display:inline-block; background:var(--accent); color:#fff; padding:10px 26px; border-radius:28px; font-weight:700; text-decoration:none; box-shadow:0 8px 22px rgba(194,108,255,0.18); }
+.hero-text{ max-width:760px; margin:20px auto 0; color: rgba(255,255,255,0.9); }
+
+/* ============================
+   WHAT WE DO
+   ============================ */
+.what-we-do{ padding:60px 0; text-align:center; background:#fff; color:var(--bg-dark); }
+.what-we-do h2{ font-size:2rem; margin-bottom:12px; }
+.section-desc{ max-width:700px; margin:0 auto 36px; color:var(--muted); }
+.services{ display:flex; justify-content:center; gap:36px; flex-wrap:wrap; }
+.service-item{ width:220px; text-align:center; }
+.service-icon{ font-size:56px; color:var(--main); display:block; margin-bottom:16px; }
+.service-item h3{ margin-bottom:8px; font-size:1.05rem; color:var(--bg-dark); }
+.service-item p{ color:var(--muted); font-size:0.95rem; }
+
+/* ============================
+   OUR RESULTS — CSS PENTAGONS
+   ============================ */
+.results{ padding:70px 0; background: linear-gradient(180deg, rgba(7,22,41,0.02), rgba(7,22,41,0.04)); }
+.results h2{ text-align:center; font-size:2rem; margin-bottom:8px; color:var(--bg-dark); }
+.results-desc{ text-align:center; color:var(--muted); max-width:700px; margin:0 auto 36px; }
+
+/* results grid */
+.results-grid{ display:flex; justify-content:center; gap:36px; flex-wrap:wrap; }
+
+/* single item: pentagon + number + label */
+.result-item{ width:150px; text-align:center; color:var(--bg-dark); }
+
+/* PENTAGON shape using clip-path — scalable and pure CSS */
+/* wrapper to control size and center number inside */
+.pentagon{
+  width:150px;
+  height:140px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  /* decorative fill */
+  background: linear-gradient(180deg, #ff8fb3 0%, #ff6565 100%);
+  /* clip-path for a regular-looking pentagon */
+  clip-path: polygon(
+    50% 0%,
+    92% 35%,
+    75% 95%,
+    25% 95%,
+    8% 35%
+  );
+  box-shadow: 0 14px 30px rgba(7,22,41,0.12), inset 0 -8px 18px rgba(0,0,0,0.08);
+}
+
+/* number centered inside pentagon */
+.pentagon-number{
+  font-size:1.4rem;
+  font-weight:800;
+  color:#fff;
+  z-index:1;
+  transform: translateY(-6%);
+  display:inline-block;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* optional small decorative ring behind number (subtle) */
+.pentagon::after{
+  content:"";
+  position:absolute;
+  inset:6%;
+  border-radius:6px;
+  background: rgba(255,255,255,0.03);
+  z-index:0;
+}
+
+/* label beneath pentagon */
+.result-item p{ margin-top:14px; font-weight:600; color:var(--bg-dark); }
+
+/* ============================
+   CONTACT
+   ============================ */
+.contact{ padding:60px 0; background:#fff; color:var(--bg-dark); text-align:center; }
+.contact-form{ max-width:520px; margin:24px auto 0; display:flex; flex-direction:column; gap:16px; }
+.input-group input, .input-group textarea{
+  padding:12px 14px; border-radius:8px; border:1px solid #e6e6e6; font-size:1rem;
+}
+.input-group input:focus, .input-group textarea:focus{ outline:none; border-color:var(--accent); box-shadow:0 6px 18px rgba(194,108,255,0.08); }
+.btn-submit{ background:var(--accent); color:#fff; padding:10px 20px; border-radius:8px; border:none; font-weight:700; }
+
+/* ============================
+   FOOTER
+   ============================ */
+.footer{ padding:36px 0 60px; background:#071629; color:#fff; }
+.footer-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.logo-footer{ width:160px; }
+.footer p{ opacity:0.7; }
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width:980px){
+  .services{ gap:20px; }
+  .results-grid{ gap:20px; }
+}
+
+@media (max-width:480px){
+  .nav-links{ display:none; }
+  .menu-icon{ display:block; }
+  .services, .results-grid{ flex-direction:column; align-items:center; }
+  .pentagon{ width:120px; height:110px; }
+  .pentagon-number{ font-size:1.15rem; }
+  .result-item{ width:160px; }
+  .hero{ padding-top:40px; }
+}
